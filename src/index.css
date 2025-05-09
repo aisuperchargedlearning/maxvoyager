@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0f] text-white;
+  }
+  
+  @font-face {
+    font-family: 'ClashDisplay';
+    src: url('https://fonts.cdnfonts.com/css/clash-display') format('woff2');
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-500;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes parallax {
+  0% {
+    transform: translateY(50px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.animate-parallax {
+  animation: parallax 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform;
+}
